@@ -1,0 +1,13 @@
+{
+    "name": "MLAB KiCad documentation workflow",
+    "description": "Generate simple documentation from KiCad project",
+    "iconName": "KiCad_icon",
+    "categories": [
+        "KiCad"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
