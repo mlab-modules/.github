@@ -1,3 +1,6 @@
 [submodule "profile/doc/assets"]
 	path = profile/doc/assets
 	url = git@github.com:MLAB-project/documents.git
+[submodule "workflow-templates/doc/assets"]
+	path = workflow-templates/doc/assets
+	url = git@github.com:MLAB-project/documents.git
