@@ -22,14 +22,16 @@ for i in $(ls -d ./*) ; do
     cd $i;
     echo "pracovni slozka:" $(pwd);
     mkdir -p doc || true;
+    rm -r doc/assets  2> /dev/null || true;
+    git pull || true
     git submodule update --init --remote || true;
-    git submodule add git@github.com:MLAB-project/documents.git doc/assets -b master || true;
-    cd doc/assets;
+    git submodule add -b KiCADv6 git@github.com:MLAB-project/documents.git doc/assets 2>/dev/null || true ; 
+
+    cd doc/assets/workflows ;
     ./copy_workflow_to_repo.sh ;
-    cd ../.. ;
-    git add doc/assets;
-    git add .github;
-    git commit -m"automated commit; add github actions";
+    cd ../../../ ;
+    git add doc/assets .github;
+    git commit -m"automated commit; add github actions" ;
     git push;
 
 done
